@@ -8,7 +8,7 @@
 #
 # Supported SIM values: verilator, icarus, questa, xcelium, vcs, riviera
 
-SIM     ?= verilator
+SIM     ?= questa
 TOP     ?= tb
 SRCS    ?= design.sv testbench.sv
 DEFINES ?=

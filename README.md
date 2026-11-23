@@ -6,7 +6,8 @@ Every lesson has its own folder with:
 
 - **`notes.md`**: concepts, code walkthrough, exercises, quiz, and interview questions
 - **`design.sv`** and **`testbench.sv`**: runnable code (the same file names EDA Playground uses, so you can paste them directly)
-- **`Makefile`**: one command to run the lesson on your simulator
+- **`run.do`**: one command to run the lesson in Questa (`do run.do`)
+- **`Makefile`**: runs the lesson from a Linux terminal with Questa or another simulator
 
 Progress is tracked in [PROGRESS.md](PROGRESS.md).
 
@@ -22,11 +23,19 @@ git clone <this-repo-url>
 cd dv-zero-to-hero/phase0_foundations/day01_intro_to_dv
 ```
 
+In the Questa Transcript window:
+
+```tcl
+do run.do
+```
+
+Or from a Linux terminal:
+
 ```bash
 make
 ```
 
-Choose a simulator with `SIM=` (`verilator`, `icarus`, `questa`, `xcelium`, `vcs`, `riviera`), for example `make SIM=questa`. To use a browser instead, see [SETUP.md](SETUP.md).
+The default simulator is Questa. Choose another with `SIM=` (`verilator`, `icarus`, `xcelium`, `vcs`, `riviera`), for example `make SIM=verilator`. See [SETUP.md](SETUP.md).
 
 ---
 
@@ -80,5 +89,6 @@ dv-zero-to-hero/
         ├── notes.md
         ├── design.sv
         ├── testbench.sv
+        ├── run.do
         └── Makefile
 ```

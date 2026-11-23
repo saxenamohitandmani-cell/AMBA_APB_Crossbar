@@ -8,7 +8,8 @@
 |---|---|
 | `design.sv` | The design under test (DUT): a 4-bit adder |
 | `testbench.sv` | A self-checking testbench for the adder |
-| `Makefile` | Runs the simulation (see [How to Run](#5-how-to-run)) |
+| `run.do` | Runs the simulation in Questa (see [How to Run](#5-how-to-run)) |
+| `Makefile` | Runs the simulation from a Linux terminal with any supported simulator |
 | `notes.md` | These notes |
 
 ---
@@ -118,32 +119,49 @@ Important details:
 
 ## 5. How to Run
 
-### Option A: EDA Playground (browser, no installation)
+### Option A: Questa GUI (recommended)
 
-1. Open EDA Playground and sign in (free account).
-2. Paste `testbench.sv` into the **Testbench** pane and `design.sv` into the **Design** pane.
-3. Under **Tools & Simulators**, choose a SystemVerilog simulator (for example, Aldec Riviera-PRO or Siemens Questa).
-4. Click **Run**.
+1. Open Questa.
+2. In the **Transcript** window, go to this lesson's folder and run the script:
 
-To enable the planted bug, add `+define+BUG` to the **Compile Options** field.
+   ```tcl
+   cd <path-to-repo>/phase0_foundations/day01_intro_to_dv
+   do run.do
+   ```
 
-### Option B: Local simulator
+3. The results appear in the Transcript, and all signals are added to the **Wave** window.
+
+To run with the planted bug:
+
+```tcl
+do run.do BUG
+```
+
+### Option B: Questa from a terminal (batch mode)
 
 From this folder:
 
 ```bash
-make                    # run with Verilator (default)
+vsim -c -do "do run.do; quit -f"
 ```
 
 ```bash
-make DEFINES=BUG        # run with the planted bug
+vsim -c -do "do run.do BUG; quit -f"
+```
+
+On Linux you can also use the Makefile:
+
+```bash
+make SIM=questa
 ```
 
 ```bash
-make SIM=questa         # or: icarus, xcelium, vcs, riviera
+make SIM=questa DEFINES=BUG
 ```
 
-See [SETUP.md](../../SETUP.md) for installing a simulator.
+### Other simulators
+
+The Makefile also supports `verilator`, `icarus`, `xcelium`, `vcs`, and `riviera` (for example, `make SIM=verilator`). You can also paste `design.sv` and `testbench.sv` into EDA Playground. See [SETUP.md](../../SETUP.md).
 
 ### Expected output
 
