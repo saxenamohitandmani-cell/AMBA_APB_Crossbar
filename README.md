@@ -16,11 +16,11 @@ Progress is tracked in [PROGRESS.md](PROGRESS.md).
 ## Quick Start
 
 ```bash
-git clone <this-repo-url>
+git clone https://github.com/saxenamohitandmani-cell/AMBA_APB_Crossbar.git
 ```
 
 ```bash
-cd dv-zero-to-hero/phase0_foundations/day01_intro_to_dv
+cd AMBA_APB_Crossbar/phase0_foundations/day01_intro_to_dv
 ```
 
 In the Questa Transcript window:
@@ -78,7 +78,7 @@ UVM register models (RAL), virtual sequences, an AXI agent, an AXI-to-APB bridge
 ## Repository Layout
 
 ```text
-dv-zero-to-hero/
+AMBA_APB_Crossbar/
 ├── README.md               This file
 ├── SETUP.md                Simulator setup
 ├── PROGRESS.md             Progress tracker
