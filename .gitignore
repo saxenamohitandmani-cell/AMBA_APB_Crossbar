@@ -1,0 +1,13 @@
+obj_dir/
+sim.out
+work/
+transcript
+*.wlf
+xcelium.d/
+xrun.*
+simv*
+csrc/
+ucli.key
+*.vcd
+*.fst
+*.log
